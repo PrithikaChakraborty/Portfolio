@@ -300,16 +300,19 @@
 </div>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
   const modal = document.getElementById('redirectModal');
   const cancelBtn = document.getElementById('cancelBtn');
   const proceedBtn = document.getElementById('proceedBtn');
 
   let targetHref = null;
 
-  // Select all project links
   document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault(); // Prevent navigation
+    link.addEventListener('click', function (e) {
+      // Avoid modal on mailto or tel links
+      if (this.href.startsWith('mailto:') || this.href.startsWith('tel:')) return;
+
+      e.preventDefault();
       targetHref = this.href;
       modal.style.display = 'block';
     });
@@ -328,13 +331,14 @@
     targetHref = null;
   });
 
-  // Optional: Close modal if user clicks outside it
-  window.addEventListener('click', function(e) {
+  window.addEventListener('click', function (e) {
     if (e.target === modal) {
       modal.style.display = 'none';
       targetHref = null;
     }
   });
+});
+
 </script>
 
 
