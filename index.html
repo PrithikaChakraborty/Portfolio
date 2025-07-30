@@ -107,7 +107,7 @@
     <header>
         <h1>Prithika Chakraborty</h1>
         <h2>Portfolio</h2>
-        <p>+91-8240660937 | <a href="mailto:chakrabortyprithika1@gmail.com">chakrabortyprithika1@gmail.com</a></p>
+        <p>+91-8240660937 | <a href="mailto:chakrabortyprithika1@gmail.com" class="modal-link">chakrabortyprithika1@gmail.com</a></p>
     </header>
 
     <section>
@@ -165,7 +165,7 @@
                 <li>Role: GenAI Developer</li>
                 <li>Engineered a chatbot that processes PDF documents and answers contextually using LLM APIs.</li>
                 <li>Implemented vector-based similarity search for multi-document intelligent retrieval.</li>
-                <li><a href="https://www.linkedin.com/posts/prithika-chakraborty_genai-nextjs-reactjs-activity-7345643978299523073-LwAi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEvbTPUBw-6EZnFat4A0EQ_cDvubcXlgvtc" target="_blank">View Working</a></li>
+                <li><a href="https://www.linkedin.com/posts/prithika-chakraborty_genai-nextjs-reactjs-activity-7345643978299523073-LwAi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEvbTPUBw-6EZnFat4A0EQ_cDvubcXlgvtc" target="_blank" class="modal-link">View Working</a></li>
             </ul>
         </li>
         <li>
@@ -175,7 +175,7 @@
                 <li>Role: Embedded Systems Developer</li>
                 <li>Created a robotic vehicle controlled via smartphone gyroscope using Bluetooth connectivity.</li>
                 <li>Enabled real-time gesture-based motion control with Arduino scripting.</li>
-                <li><a href="https://drive.google.com/drive/folders/1vH3mqUjWb7V7YqG9K_F_2aBLfzhyheao?usp=sharing" target="_blank">View Documentation</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1vH3mqUjWb7V7YqG9K_F_2aBLfzhyheao?usp=sharing" class="modal-link" target="_blank">View Documentation</a></li>
             </ul>
         </li>
         <li>
@@ -194,7 +194,7 @@
                 <li>Role: Visual Lead</li>
                 <li>Produced 150+ digital/print creatives including speaker posters, backdrops, and invites.</li>
                 <li>Created a unified brand identity for the entire TEDx event experience.</li>
-                <li><a href="https://www.behance.net/prithikchakraborty" target="_blank">View on Behance</a></li>
+                <li><a href="https://www.behance.net/prithikchakraborty" target="_blank" class="modal-link">View on Behance</a></li>
             </ul>
         </li>
         <li>
@@ -204,7 +204,7 @@
                 <li>Role: Graphic Designer</li>
                 <li>Designed 300+ assets for campaigns across college fests including Square 1 and Celeste.</li>
                 <li>Blended GenAI creativity with design for T-shirts, banners, and digital passes.</li>
-                <li><a href="https://www.behance.net/prithikchakraborty" target="_blank">View on Behance</a></li>
+                <li><a href="https://www.behance.net/prithikchakraborty" target="_blank" class="modal-link">View on Behance</a></li>
             </ul>
         </li>
          <li>
@@ -281,8 +281,8 @@
         <h2>Contact Information</h2>
         <p><strong>Email:</strong> <a href="mailto:chakrabortyprithika1@gmail.com">chakrabortyprithika1@gmail.com</a></p>
         <p><strong>Phone:</strong> +91-8240660937</p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/prithika-chakraborty" target="_blank">linkedin.com/in/prithika-chakraborty</a></p>
-        <p><strong>Behance:</strong> <a href="https://www.behance.net/prithikchakraborty" target="_blank">behance.net/prithikchakraborty</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/prithika-chakraborty" target="_blank" class="modal-link">linkedin.com/in/prithika-chakraborty</a></p>
+        <p><strong>Behance:</strong> <a href="https://www.behance.net/prithikchakraborty" target="_blank" class="modal-link">behance.net/prithikchakraborty</a></p>
     </section>
 
     <footer>
@@ -304,14 +304,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const modal = document.getElementById('redirectModal');
   const cancelBtn = document.getElementById('cancelBtn');
   const proceedBtn = document.getElementById('proceedBtn');
-
   let targetHref = null;
 
-  document.querySelectorAll('a').forEach(link => {
+  // Only apply modal to links with class 'modal-link'
+  document.querySelectorAll('a.modal-link').forEach(link => {
     link.addEventListener('click', function (e) {
-      // Avoid modal on mailto or tel links
-      if (this.href.startsWith('mailto:') || this.href.startsWith('tel:')) return;
-
       e.preventDefault();
       targetHref = this.href;
       modal.style.display = 'block';
@@ -338,8 +335,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-
 </script>
+
 
 
 </body>
